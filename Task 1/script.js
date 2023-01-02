@@ -9,11 +9,12 @@ Pastaba: atvaizdavimas turi būti matomas pateikus formą ir pateikiamas
 <div id="output"></div> viduje, bei turi turėti bent minimalų stilių;
 ------------------------------------------------------------------- */
 const answers = document.querySelector("#output");
-const submit = document.querySelector("#submit-btn");
+const submitInput = document.querySelector("#submit");
 
 submit.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log("Submit");
+
+  answers.innerHTML = "";
 
   const weightKg = e.target.elements.search.valueAsNumber;
   const weightLb = weightKg * 2.2046;
