@@ -8,3 +8,29 @@ pamatyti jo pateikto svorio konvertavimą į:
 Pastaba: atvaizdavimas turi būti matomas pateikus formą ir pateikiamas
 <div id="output"></div> viduje, bei turi turėti bent minimalų stilių;
 ------------------------------------------------------------------- */
+const answers = document.querySelector("#output");
+const submit = document.querySelector("#submit-btn");
+
+submit.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log("Submit");
+
+  const weightKg = e.target.elements.search.valueAsNumber;
+  const weightLb = weightKg * 2.2046;
+  const weightG = weightKg / 0.001;
+  const weightOz = weightKg * 35.274;
+
+  const answersToLbP = document.createElement("p");
+  const answersToGP = document.createElement("p");
+  const answersToOzP = document.createElement("p");
+
+  const answerToLbText = document.createTextNode(`${weightLb} lb`);
+  const answerToGText = document.createTextNode(`${weightG} g.`);
+  const answerToOzText = document.createTextNode(`${weightOz} oz`);
+
+  answersToLbP.append(answerToLbText);
+  answersToGP.append(answerToGText);
+  answersToOzP.append(answerToOzText);
+
+  answers.append(answersToLbP, answersToGP, answersToOzP);
+});
