@@ -9,9 +9,9 @@ Pastaba: atvaizdavimas turi būti matomas pateikus formą ir pateikiamas
 <div id="output"></div> viduje, bei turi turėti bent minimalų stilių;
 ------------------------------------------------------------------- */
 const answers = document.querySelector("#output");
-const submitInput = document.querySelector("#submit");
+const submitForm = document.querySelector("#submit");
 
-submit.addEventListener("submit", (e) => {
+submitForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   answers.innerHTML = "";
